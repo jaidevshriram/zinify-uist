@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* 
+        .content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+         */
+
+        @media print {
+            body, html {
+                overflow: hidden;
+            }
+            .text {
+                overflow: hidden;
+            }
+            @page {
+                size: A4 landscape;
+            }
+        }
+
+        @media print {
+            @page { margin: 0; }
+        }
+
+        h1 {
+            font-family: {{ title_font }}!important;
+        }
+
+        body {
+            font-family: {{ body_font }}!important;
+        }
+
+        * {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid h-100 w-100">
+    <div class="row h-100">
+        <div class="col-4 p-0">
+            {{ page1 }}
+        </div>
+        <div class="col-4 p-0">
+            {{ page2 }}
+        </div>
+        <div class="col-4 p-0">
+            {{ page3 }}
+        </div>
+    </div>
+</div>
+
+<!-- Copy the above block for the second page -->
+<!-- <div class="container-fluid h-100">
+    <div class="row content">
+        <div class="col-4">
+            {% block page4 %}
+            {% endblock %}
+        </div>
+        <div class="col-4">
+            {% block page5 %}
+            {% endblock %}
+        </div>
+        <div class="col-4">
+            {% block page6 %}
+            {% endblock %}
+        </div>
+    </div>
+</div> -->
+
+<!-- Optional Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Background with Text</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .content {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Background for each section */
+        .content:nth-child(1) .col {
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+            url('../Downloads/_cfc2f264-c105-4cab-ab78-6c50852c668a.jpg') no-repeat center/cover;
+            background-blend-mode: screen;
+        }
+
+        .content:nth-child(2) .col {
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+            url('../Downloads/image2.jpg') no-repeat center/cover;
+            background-blend-mode: screen;
+        }
+
+        .content:nth-child(3) .col {
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+            url('../Downloads/image3.jpg') no-repeat center/cover;
+            background-blend-mode: screen;
+        }
+
+        .text {
+            text-align: center;
+            color: black;
+            font-family: 'Tangerine', cursive;
+            font-size: 24px;
+            overflow: auto; /* Allow for a scrollbar if content overflows */
+            height: 90%;
+            padding: 2%;
+        }
+
+        @media print {
+            body, html {
+                overflow: visible;
+            }
+            .text {
+                overflow: visible;
+            }
+            @page {
+                size: A4 landscape;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid h-100">
+    <div class="row content">
+        <div class="col-4">
+            <div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

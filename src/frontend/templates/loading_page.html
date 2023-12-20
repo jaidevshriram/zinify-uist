@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zinify Loading Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body class="h-screen">
+    <div class="container mx-auto p-6 h-full flex flex-col">
+        <h2 class="text-4xl font-bold mb-6 text-center">Zinifying</h2>
+
+        <div class="flex flex-grow">
+            <!-- Summary Text on the left -->
+            <div class="w-1/4 bg-gray-200 p-4 mr-6 rounded flex flex-col justify-center">
+                <p id="summaryText" class="text-gray-700">Fetching summary...</p>
+            </div>
+
+            <!-- Boxes on the right -->
+            <div class="w-3/4 grid grid-cols-3 gap-6 h-full">
+                <div class="col-span-1 bg-gray-200 p-4 rounded flex items-center justify-center" id="box1">Fetching box
+                    1 data... <i class="fas fa-circle-notch fa-spin ml-3"></i></div>
+                <div class="col-span-1 bg-gray-200 p-4 rounded flex items-center justify-center" id="box2">Fetching box
+                    2 data... <i class="fas fa-circle-notch fa-spin ml-3"></i></div>
+                <div class="col-span-1 bg-gray-200 p-4 rounded flex items-center justify-center" id="box3">Fetching box
+                    3 data... <i class="fas fa-circle-notch fa-spin ml-3"></i></div>
+                <div class="col-span-1 bg-gray-200 p-4 rounded flex items-center justify-center" id="box4">Fetching box
+                    4 data... <i class="fas fa-circle-notch fa-spin ml-3"></i></div>
+                <div class="col-span-1 bg-gray-200 p-4 rounded flex items-center justify-center" id="box5">Fetching box
+                    5 data... <i class="fas fa-circle-notch fa-spin ml-3"></i></div>
+                <div class="col-span-1 bg-gray-200 p-4 rounded flex items-center justify-center" id="box6">Fetching box
+                    6 data... <i class="fas fa-circle-notch fa-spin ml-3"></i></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    // Poll the /is_done route every second to see if processing is complete
+    function checkIfDone() {
+        fetch('/is_done')
+            .then(response => response.json())
+            .then(data => {
+                if (data.done) {
+                    // If processing is complete, redirect to the final page
+                    window.location.href = "{{ url_for('finished') }}";
+                } else {
+                    // Otherwise, check again in one second
+                    setTimeout(checkIfDone, 1000);
+                }
+            });
+    }
+
+    // Start the polling process
+    checkIfDone();
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function fetchData() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('summaryText').textContent = data.summary;
+                    document.getElementById('box1').textContent = data.box1;
+                    document.getElementById('box2').textContent = data.box2;
+                    document.getElementById('box3').textContent = data.box3;
+                    document.getElementById('box4').textContent = data.box4;
+                    document.getElementById('box5').textContent = data.box5;
+                    document.getElementById('box6').textContent = data.box6;
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Initial call to fetch data when the page loads
+        fetchData();
+
+        // Call fetchData every second (1000 milliseconds)
+        setInterval(fetchData, 1000);
+    });
+</script>
+
+</html>

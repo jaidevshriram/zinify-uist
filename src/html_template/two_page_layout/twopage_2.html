@@ -1,0 +1,29 @@
+<style>
+    .bg-twopage1 {
+        position: relative; /* Added to ensure the ::before pseudo-element positions relative to this container */
+        background: linear-gradient(rgba({{ background_color1_tuple }}, 0.9), rgba({{ background_color1_tuple }}, 0.9)), url({{ img1_path }});
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .text-color-twopage1 {
+        color: {{ text_color1 }};
+    }
+</style>
+
+<div class="container-fluid h-100 w-100 bg-twopage1">
+    <div class="row h-100">
+        <div class="col-6">
+            <div class="d-flex justify-content-end align-items-end h-100 p-5">
+                <span class="text-color-twopage1 text-align-left">{{ text1 }}</span>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="d-flex justify-content-end align-items-end h-100 p-5">
+                <span class="text-color-twopage1 text-align-right">{{ text2 }}</span>
+            </div>
+        </div>
+    </div>
+</div>

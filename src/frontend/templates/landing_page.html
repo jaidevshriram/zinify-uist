@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Zinify</title>
+</head>
+
+<body class="bg-gray-100 h-screen flex justify-center items-center">
+
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <h1 class="text-4xl font-bold mb-6 text-center">Zinify</h1>
+
+        <form action="/" method="post">
+            <!-- Text Input for Style -->
+            <div class="mb-6">
+                <label for="style" class="block text-sm font-medium text-gray-600 mb-2">Style:</label>
+                <input type="text" id="style" name="style" placeholder="Enter style"
+                    class="w-full p-3 border rounded-md">
+            </div>
+
+            <!-- Selection Slider -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-600 mb-2">Choose:</label>
+                <div class="flex justify-between">
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="option" value="introduce">
+                        <span class="ml-2">Introduce</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="option" value="highlight">
+                        <span class="ml-2">Highlight</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="option" value="primer">
+                        <span class="ml-2">Primer</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Field for Link -->
+            <div class="mb-6">
+                <label for="link" class="block text-sm font-medium text-gray-600 mb-2">Link:</label>
+                <input type="text" id="link" name="link" placeholder="Enter link" class="w-full p-3 border rounded-md">
+            </div>
+
+            <!-- Zinify Button -->
+            <div class="mt-4">
+                <button type="submit"
+                    class="w-full bg-purple-600 text-white p-3 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">Zinify
+                    it!</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!---
+
+This cover is just an image background, and a title.
+
+Requires:
+
+img_path: path to the image file
+title: title of the zine
+
+-->
+
+<style>
+    .bg-cover-back {
+        background-image: url({{ img1_path }});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(0, 0, 0, 0.75); /* Half-transparent red */
+        background-blend-mode: overlay; /* This blends the color with the image */
+    }
+</style>
+
+<div class="h-100 w-100 bg-cover-back">
+    <div class="d-flex justify-content-center align-items-center text-center p-5 text-white" style="height: 100vh;">
+        <p>{{ abstract }}</p>
+    </div>
+</div>

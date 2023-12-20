@@ -1,0 +1,86 @@
+{
+    "pages": [
+        {
+            "html_layout": "cover/cover3.html",
+            "requirements": {
+                "title": 1,
+                "abstract": 0,
+                "heading": 0,
+                "catchy_text": 0,
+                "text_pos": "center",
+                "num_images": 1,
+                "text_boxes": 0,
+                "word_count": []
+            }
+        },
+        {
+            "html_layout": "content/content1.html",
+            "requirements": {
+                "title": 0,
+                "abstract": 0,
+                "heading": 0,
+                "catchy_text": 0,
+                "num_images": 0,
+                "text_boxes": 1,
+                "word_count": [
+                    500
+                ]
+            }
+        },
+        {
+            "html_layout": "content/content4.html",
+            "requirements": {
+                "title": 0,
+                "abstract": 0,
+                "heading": 0,
+                "catchy_text": 0,
+                "num_images": 1,
+                "text_boxes": 1,
+                "word_count": [
+                    250
+                ]
+            }
+        },
+        {
+            "html_layout": "content/content1.html",
+            "requirements": {
+                "title": 0,
+                "abstract": 0,
+                "heading": 0,
+                "catchy_text": 0,
+                "num_images": 0,
+                "text_boxes": 1,
+                "word_count": [
+                    500
+                ]
+            }
+        },
+        {
+            "html_layout": "content/content3.html",
+            "requirements": {
+                "title": 0,
+                "abstract": 0,
+                "heading": 0,
+                "catchy_text": 0,
+                "num_images": 1,
+                "text_boxes": 1,
+                "word_count": [
+                    250
+                ]
+            }
+        },
+        {
+            "html_layout": "back/back1.html",
+            "requirements": {
+                "title": 0,
+                "abstract": 1,
+                "heading": 0,
+                "catchy_text": 0,
+                "num_images": 1,
+                "text_boxes": 0,
+                "word_count": []
+            }
+        }
+    ],
+    "layout": "single_page_layout"
+}

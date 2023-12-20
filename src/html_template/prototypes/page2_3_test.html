@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Background with Text</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .flex-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            flex: 1; /* Each content takes equal space */
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Background for each section */
+        .content:nth-child(1) {
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+            url('../Downloads/_cfc2f264-c105-4cab-ab78-6c50852c668a.jpg') no-repeat center/cover;
+            background-blend-mode: screen;
+        }
+
+        .content:nth-child(2) {
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+            url('../Downloads/_4d3aaac0-154d-4858-8ed6-25adb373d052.jpg') no-repeat center/cover;
+            background-blend-mode: screen;
+        }
+
+        .content:nth-child(3) {
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+            url('../Downloads/_ac6448bd-d71d-46aa-bac3-22e41e7a2c81.jpg') no-repeat center/cover;
+            background-blend-mode: screen;
+        }
+
+        .text {
+            max-width: 90%;
+            text-align: center;
+            color: black;
+            font-family: 'Tangerine', cursive;
+            font-size: 24px;
+        }
+
+        @media print {
+            body, html {
+                overflow: visible;
+            }
+            .text {
+                overflow: visible;
+            }
+            .content {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            @page {
+                size: A4 landscape;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="flex-container">
+    <div class="content">
+        <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+        </div>
+    </div>
+    <div class="content">
+        <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+        </div>
+    </div>
+    <div class="content">
+        <div class="text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

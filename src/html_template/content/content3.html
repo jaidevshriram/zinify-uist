@@ -1,0 +1,27 @@
+<style>
+    .bg-content3 {
+        background-color: {{ background_color1_bottomimage }};
+    }
+
+    .fade-image3 img {
+    -webkit-mask-image:-webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to top, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
+  }
+
+  .text-color-content3 {
+    color: {{ text_color1_bottomimage }};
+  }
+</style>
+
+<div class="container-fluid h-100 w-100 bg-content3">
+<div class="row h-50">
+    <div class="col-12 d-flex justify-content-start align-items-center p-5">
+        <span class="text-color-content3">{{ text1 }}</span>
+    </div>
+</div>
+<div class="row h-50">
+    <div class="col-12 p-0 fade-image3">
+        <img src={{ img1_path }} alt="Description of the image" class="w-100">
+    </div>
+</div>
+</div>

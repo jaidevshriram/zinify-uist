@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>ZINify</title>
+
+    <style>
+        body {
+            font-family: 'Helvetica';
+            /* Background image */
+            background-image: url("{{ url_for('static', filename='cover.png') }}");;
+            background-size: cover;
+            background-position: center;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgb(63, 63, 63, 0.9), rgba(65, 65, 65, 0.9));
+            z-index: -1; /* Ensure the gradient overlay is below the text content */
+            pointer-events: none; /* This ensures the overlay doesn't interfere with any clickable elements underneath */
+        }
+
+        h1 {
+            font-family: 'Newake';
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 h-screen flex justify-center items-center">
+
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">
+        <h1 class="text-4xl font-bold mb-6 text-center">ZINify</h1>
+
+        <form action="/" method="post" enctype="multipart/form-data">
+            <!-- Field for Link or PDF Upload -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-600 mb-2">Choose Input:</label>
+                <div class="flex justify-between">
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="inputType" value="link" checked onclick="toggleInput('link')">
+                        <span class="ml-2">Link</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="inputType" value="pdf" onclick="toggleInput('pdf')">
+                        <span class="ml-2">Upload PDF</span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Field for Link -->
+            <div class="mb-6" id="linkField">
+                <label for="link" class="block text-sm font-medium text-gray-600 mb-2">Link:</label>
+                <input type="text" id="link" name="link" placeholder="Enter link" class="w-full p-3 border rounded-md">
+            </div>
+        
+            <!-- Field for PDF Upload -->
+            <div class="mb-6" id="pdfField" style="display: none;">
+                <label for="pdf" class="block text-sm font-medium text-gray-600 mb-2">Upload PDF:</label>
+                <input type="file" id="pdf" name="pdf" accept=".pdf" class="w-full p-3 border rounded-md">
+            </div>        
+
+            <!-- Selection Slider -->
+            <div class="mb-6">
+                <label class="block text-sm font-medium text-gray-600 mb-2">Choose:</label>
+                <div class="flex justify-between">
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="option" value="summary">
+                        <span class="ml-2">Summary</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="option" value="highlight">
+                        <span class="ml-2">Highlight</span>
+                    </label>
+                    <!-- <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="option" value="primer">
+                        <span class="ml-2">Primer</span>
+                    </label> -->
+                    <label class="inline-flex items-center">
+                        <input type="radio" class="form-radio" name="option" value="creative">
+                        <span class="ml-2">Creative</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Text Input for Style -->
+            <div class="mb-6">
+                <label for="style" class="block text-sm font-medium text-gray-600 mb-2">Style:</label>
+                <input type="text" id="style" name="style" placeholder="Enter style"
+                    class="w-full p-3 border rounded-md">
+            </div>
+
+            <!-- Zinify Button -->
+            <div class="mt-4">
+                <button type="button" id="zinifyButton" onclick="updateButtonText()"
+                    class="w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">ZINify
+                    it!</button>
+
+            </div>
+
+            <script>
+                function toggleInput(type) {
+                    if (type === 'link') {
+                        document.getElementById('linkField').style.display = 'block';
+                        document.getElementById('pdfField').style.display = 'none';
+                    } else {
+                        document.getElementById('linkField').style.display = 'none';
+                        document.getElementById('pdfField').style.display = 'block';
+                    }
+                }
+            </script>
+        </form>
+
+    </div>
+
+</body>
+<script>
+    // This function updates the button text when it's clicked
+    function updateButtonText() {
+        const button = document.getElementById('zinifyButton');
+        button.innerHTML = 'Downloading your paper...';
+        button.disabled = true;  // Disable the button to prevent multiple clicks
+        document.forms[0].submit();  // This line submits the form programmatically
+    }
+
+</script>
+
+</html>

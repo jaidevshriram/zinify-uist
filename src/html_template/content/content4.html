@@ -1,0 +1,31 @@
+
+<style>
+    .bg-content4 {
+        background-color: {{ background_color1_topimage }};
+    }
+
+
+  .fade-image4 img {
+    -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0));
+  }
+
+  .text-color-content4 {
+    color: {{ text_color1_topimage }};
+  }
+
+</style>
+
+<div class="container-fluid h-100 w-100 bg-content4">
+    <div class="row h-50">
+        <div class="col-12 p-0 fade-image4">
+            <img src="{{ img1_path }}" alt="Description of the image" class="w-100">
+        </div>
+    </div>
+    <div class="row h-50">
+        <div class="col-12 d-flex justify-content-start align-items-center p-5">
+            <span class="text-color-content4">{{ text1 }}</span>
+        </div>
+    </div>
+    </div>
+    
