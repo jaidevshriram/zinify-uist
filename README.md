@@ -1,5 +1,7 @@
 # **ZINify:** Transforming Research Papers into Engaging Zines with Large Language Models
 
+Jaidev Shriram*, Sanjayan Sreekala* (UC San Diego)
+
 ### 🏅 Honorable Mention (People's Choice) - UIST '23
 
 **Abstract**: 
