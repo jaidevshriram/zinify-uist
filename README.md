@@ -2,7 +2,7 @@
 
 Jaidev Shriram*, Sanjayan Sreekala* (UC San Diego)
 
-### 🏅 Honorable Mention (People's Choice) - UIST '23
+### 🏅 Honorable Mention Student Innovation Contest (People's Choice) - UIST '23
 
 **Abstract**: 
 
